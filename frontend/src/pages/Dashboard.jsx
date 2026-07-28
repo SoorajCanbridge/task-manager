@@ -67,7 +67,7 @@ export default function Dashboard() {
     setPage(1);
   }
 
-  function handleStatusChange(value) {
+  function handleFilterStatusChange(value) {
     setStatus(value);
     setPage(1);
   }
@@ -102,7 +102,7 @@ export default function Dashboard() {
     }
   }
 
-  async function handleStatusChange(taskId, nextStatus) {
+  async function handleTaskStatusChange(taskId, nextStatus) {
     setUpdatingStatusId(taskId);
     setError('');
 
@@ -168,7 +168,7 @@ export default function Dashboard() {
             search={search}
             status={status}
             onSearchChange={handleSearchChange}
-            onStatusChange={handleStatusChange}
+            onStatusChange={handleFilterStatusChange}
           />
         </div>
 
@@ -185,7 +185,7 @@ export default function Dashboard() {
               isAdmin={user.role === 'admin'}
               onEdit={openEditForm}
               onDeleteClick={openDeleteConfirm}
-              onStatusChange={handleStatusChange}
+              onStatusChange={handleTaskStatusChange}
               deletingId={deletingId}
               updatingStatusId={updatingStatusId}
             />
